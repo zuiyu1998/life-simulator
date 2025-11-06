@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7soxp5q5siiu"]
+
+[ext_resource type="Texture2D" uid="uid://cwjoms3ltxubn" path="res://src/chess/piece-bg.png" id="1_b3tjj"]
+[ext_resource type="Script" uid="uid://b61wmkoimvpyw" path="res://src/level/chess_slot.gd" id="1_laxon"]
+[ext_resource type="Shader" uid="uid://bvhiyrwbouesb" path="res://src/level/chess_slot.gdshader" id="2_hdhtu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4sih"]
+shader = ExtResource("2_hdhtu")
+shader_parameter/level_color = Vector4(1, 1, 1, 1)
+
+[node name="ChessSlot" type="MarginContainer"]
+custom_minimum_size = Vector2(128, 128)
+script = ExtResource("1_laxon")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_w4sih")
+layout_mode = 2
+texture = ExtResource("1_b3tjj")
+stretch_mode = 1
+
+[node name="ChessItem" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ChessItem"]
+layout_mode = 2
+stretch_mode = 1

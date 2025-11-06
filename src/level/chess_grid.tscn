@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://yv0gmg8jqdj7"]
+
+[ext_resource type="PackedScene" uid="uid://c7soxp5q5siiu" path="res://src/level/chess_slot.tscn" id="1_8nc3j"]
+
+[node name="ChessGrid" type="GridContainer"]
+
+[node name="ChessSlot" parent="." instance=ExtResource("1_8nc3j")]
+layout_mode = 2

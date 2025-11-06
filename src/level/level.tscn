@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://p643g17vxe5x"]
+
+[ext_resource type="PackedScene" uid="uid://yv0gmg8jqdj7" path="res://src/level/chess_grid.tscn" id="1_ybxv7"]
+
+[node name="Level" type="Node2D"]
+
+[node name="ChessGrid" parent="." instance=ExtResource("1_ybxv7")]

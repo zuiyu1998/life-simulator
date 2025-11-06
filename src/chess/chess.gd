@@ -9,6 +9,9 @@ var chess_name: StringName = &""
 # 棋子介绍
 @export
 var description: String = ""
+# 图片
+@export
+var image: Texture
 # 棋子的消耗
 @export
 var costs: Array[ChessCost] = []
