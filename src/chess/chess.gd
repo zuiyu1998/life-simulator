@@ -12,6 +12,9 @@ var description: String = ""
 # 图片
 @export
 var image: Texture
+# 等级
+@export
+var level = 0
 # 棋子的消耗
 @export
 var costs: Array[ChessCost] = []

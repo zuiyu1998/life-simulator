@@ -1,30 +1,36 @@
+extends Resource
 class_name ChessGrid
 ## 棋盘，负责棋子增删改查
+##
 
+signal chess_change
 
-var _items: Dictionary[Vector2i, ChessGridItem] = {}
+@export
+var items: Array[Chess] = []
 
-func set_item(x: int, y: int, item: ChessGridItem):
-	_items.set(Vector2i(x, y), item)
+func fill(size: int):
+	items = []
+	for i in range(0, size):
+		items.push_back(null)
 
-func get_item(x: int, y: int) -> ChessGridItem:
-	return _items.get(Vector2i(x, y))
+func set_item(index: int, item: Chess):
+	items[index] = item
+	emit_signal("chess_change", index)
+
+func get_item(index: int) -> Chess:
+	return items[index]
 
 # 合并棋子
-func merge(x: int, y: int, item: ChessGridItem) -> bool:
-	var index = Vector2i(x, y)
-	var culItem = _items.get(index)
+func merge(index: int, item: Chess) -> bool:
+	var culItem = items.get(index)
 	
 	if culItem == null:
-		_items.set(index, item)
+		set_item(index, item)
 		return true
 	
-	if culItem.level == item.level:
+	if culItem.chess_name == item.chess_name and culItem.level == item.level:
 		culItem.level += 1
+		emit_signal("chess_change", index)
 		return true
 	
 	return false
-
-class ChessGridItem:
-	var chess: Chess
-	var level: int

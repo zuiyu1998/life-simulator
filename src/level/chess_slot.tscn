@@ -4,23 +4,26 @@
 [ext_resource type="Script" uid="uid://b61wmkoimvpyw" path="res://src/level/chess_slot.gd" id="1_laxon"]
 [ext_resource type="Shader" uid="uid://bvhiyrwbouesb" path="res://src/level/chess_slot.gdshader" id="2_hdhtu"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w4sih"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hdhtu"]
+resource_local_to_scene = true
 shader = ExtResource("2_hdhtu")
-shader_parameter/level_color = Vector4(1, 1, 1, 1)
+shader_parameter/level_color = Color(1, 1, 1, 1)
 
 [node name="ChessSlot" type="MarginContainer"]
 custom_minimum_size = Vector2(128, 128)
 script = ExtResource("1_laxon")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_w4sih")
+material = SubResource("ShaderMaterial_hdhtu")
 layout_mode = 2
 texture = ExtResource("1_b3tjj")
-stretch_mode = 1
+stretch_mode = 4
 
 [node name="ChessItem" type="MarginContainer" parent="."]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="ChessItem"]
+[node name="ChessIcon" type="TextureRect" parent="ChessItem"]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-stretch_mode = 1
+expand_mode = 1
+stretch_mode = 4
