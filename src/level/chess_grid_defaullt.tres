@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bqo4lla32p4wj" path="res://src/chess/chess.gd" id="1_b1fp8"]
 [ext_resource type="Resource" uid="uid://q3mrec3b1thm" path="res://src/chess/resources/appple.tres" id="2_ooq08"]
 [ext_resource type="Resource" uid="uid://dp2qvh4ype7hb" path="res://src/chess/resources/banana.tres" id="3_y6nqk"]
-[ext_resource type="Script" uid="uid://vdi5hbpckkbj" path="res://src/level/chess_grid.gd" id="4_bwq5p"]
+[ext_resource type="Script" uid="uid://vdi5hbpckkbj" path="res://src/level/chess_grid/chess_grid.gd" id="4_bwq5p"]
 
 [resource]
 script = ExtResource("4_bwq5p")

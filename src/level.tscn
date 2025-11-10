@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://cfufyhiubeaap"]
-
-[ext_resource type="Script" uid="uid://drnncvhax3k8r" path="res://src/level.gd" id="1_4q7qo"]
-[ext_resource type="PackedScene" uid="uid://yv0gmg8jqdj7" path="res://src/level/chess_grid_panel.tscn" id="1_ybxv7"]
-
-[node name="Level" type="Node2D"]
-script = ExtResource("1_4q7qo")
-
-[node name="ChessGridPanel" parent="." instance=ExtResource("1_ybxv7")]

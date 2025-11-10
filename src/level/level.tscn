@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://p643g17vxe5x"]
+[gd_scene load_steps=3 format=3 uid="uid://p643g17vxe5x"]
 
-[ext_resource type="PackedScene" uid="uid://yv0gmg8jqdj7" path="res://src/level/chess_grid_panel.tscn" id="1_ybxv7"]
+[ext_resource type="Script" uid="uid://drnncvhax3k8r" path="res://src/level/level.gd" id="1_xv147"]
+[ext_resource type="PackedScene" uid="uid://yv0gmg8jqdj7" path="res://src/level/chess_grid/chess_grid_panel.tscn" id="1_ybxv7"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_xv147")
 
-[node name="ChessGrid" parent="." instance=ExtResource("1_ybxv7")]
+[node name="ChessGridPanel" parent="." instance=ExtResource("1_ybxv7")]

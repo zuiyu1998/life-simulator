@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://yv0gmg8jqdj7"]
 
-[ext_resource type="Script" uid="uid://bj5soxk8226r2" path="res://src/level/chess_grid_panel.gd" id="1_7egdb"]
+[ext_resource type="Script" uid="uid://bj5soxk8226r2" path="res://src/level/chess_grid/chess_grid_panel.gd" id="1_7egdb"]
 
 [node name="ChessGridPanel" type="GridContainer"]
 columns = 3

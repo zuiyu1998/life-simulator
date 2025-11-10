@@ -1,7 +1,7 @@
 extends GridContainer
 class_name ChessGridPanel
 
-const chess_slot_tscn = preload("res://src/level/chess_slot.tscn")
+const chess_slot_tscn = preload("res://src/level/chess_grid/chess_slot.tscn")
 
 @export
 var item_size: int = 9
