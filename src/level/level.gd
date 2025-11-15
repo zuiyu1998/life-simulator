@@ -2,6 +2,7 @@ extends Node2D
 class_name Level
 
 @onready var chess_grid_pane: ChessGridPanel = $ChessGridPanel
+@onready var task_manager: TaskManager = $TaskManager
 
 var chess_grid = preload("res://src/level/chess_grid_defaullt.tres") 
 
