@@ -1,8 +1,8 @@
 class_name ChessHelper
 
 const CHESS_LIST = [
-	preload("res://src/chess/resources/appple.tres"),
-	preload("res://src/chess/resources/banana.tres")
+	preload("res://src/chess/data/appple.tres"),
+	preload("res://src/chess/data/banana.tres")
 ]
 
 static func get_chess() -> Chess:

@@ -1,13 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://p643g17vxe5x"]
+[gd_scene load_steps=5 format=3 uid="uid://p643g17vxe5x"]
 
 [ext_resource type="Script" uid="uid://drnncvhax3k8r" path="res://src/level/level.gd" id="1_xv147"]
 [ext_resource type="PackedScene" uid="uid://yv0gmg8jqdj7" path="res://src/level/chess_grid/chess_grid_panel.tscn" id="1_ybxv7"]
+[ext_resource type="PackedScene" uid="uid://lt16vgxgdml5" path="res://src/level/level_state_panel.tscn" id="2_mpbj7"]
 [ext_resource type="Script" uid="uid://dcv4dirpoaaud" path="res://src/level/task_manager.gd" id="3_af42n"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_xv147")
 
-[node name="ChessGridPanel" parent="." instance=ExtResource("1_ybxv7")]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 146.0
+offset_bottom = 40.0
+
+[node name="LevelStatePanel" parent="VBoxContainer" instance=ExtResource("2_mpbj7")]
+layout_mode = 2
+
+[node name="ChessGridPanel" parent="VBoxContainer" instance=ExtResource("1_ybxv7")]
+layout_mode = 2
 
 [node name="TaskManager" type="Node" parent="."]
 script = ExtResource("3_af42n")

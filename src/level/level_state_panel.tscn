@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://lt16vgxgdml5"]
+
+[ext_resource type="Script" uid="uid://bwca7gvjqnx1" path="res://src/level/level_state_panel.gd" id="1_u45sf"]
+
+[node name="LevelStatePanel" type="HBoxContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_u45sf")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "金钱"
+
+[node name="Money" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "心情"
+
+[node name="Like" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "体力"
+
+[node name="Health" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "0"

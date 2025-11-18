@@ -33,7 +33,7 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	# 设置拖动的状态
 	
 	var item_index = get_index()
-	if chess_grid_panel.chess_grid.merge(item_index, item_drag.chess):
+	if chess_grid_panel.chess_grid.on_drag(item_index, item_drag.chess):
 		item_drag.success = true
 		chess_grid_panel.chess_grid.set_item(item_drag.item_index, null)
 

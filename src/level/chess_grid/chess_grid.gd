@@ -4,6 +4,7 @@ class_name ChessGrid
 ##
 
 signal chess_change
+signal merge(item: Chess)
 
 @export
 var items: Array[Chess] = []
@@ -21,7 +22,7 @@ func get_item(index: int) -> Chess:
 	return items[index]
 
 # 合并棋子
-func merge(index: int, item: Chess) -> bool:
+func on_drag(index: int, item: Chess) -> bool:
 	var culItem = items.get(index)
 	
 	if culItem == null:
@@ -29,6 +30,8 @@ func merge(index: int, item: Chess) -> bool:
 		return true
 	
 	if culItem.chess_name == item.chess_name and culItem.level == item.level:
+		var clone = culItem.duplicate()
+		emit_signal("merge", clone)
 		culItem.level += 1
 		emit_signal("chess_change", index)
 		return true

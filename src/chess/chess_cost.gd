@@ -4,6 +4,7 @@ class_name ChessCost
 
 # 消耗对应的状态
 @export
-var status_name: StringName = &""
+var cost_name: StringName = &""
 # 消耗对应的值
+@export
 var value: int = -1
