@@ -27,6 +27,7 @@ func on_drag(index: int, item: Chess) -> bool:
 	
 	if culItem == null:
 		set_item(index, item)
+		emit_signal("chess_change", index)
 		return true
 	
 	if culItem.chess_name == item.chess_name and culItem.level == item.level:

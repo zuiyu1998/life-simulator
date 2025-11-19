@@ -3,7 +3,7 @@ class_name ChessCostHandlerContainer
 var _data: Dictionary[String, ChessCostHandler] = {}
 
 func register(name: String, handler: ChessCostHandler):
-	print("%s chess const handler register." % name)
+	print("%s chess cost handler register." % name)
 	_data[name] = handler
 
 
