@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SkillSet" load_steps=4 format=3 uid="uid://b4fxj4p6p3uc0"]
+
+[ext_resource type="Script" uid="uid://cy5negxv4o84w" path="res://src/skill/skill_set.gd" id="1_1wttm"]
+[ext_resource type="Script" uid="uid://ckal5y4kd5adx" path="res://src/skill/skill.gd" id="2_jms4v"]
+[ext_resource type="Resource" uid="uid://bqlgih5h7v26u" path="res://src/skill/data/game.tres" id="3_jms4v"]
+
+[resource]
+script = ExtResource("1_1wttm")
+skills = Dictionary[String, ExtResource("2_jms4v")]({
+"game": ExtResource("3_jms4v")
+})
+metadata/_custom_type_script = "uid://cy5negxv4o84w"

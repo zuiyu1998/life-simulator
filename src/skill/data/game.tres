@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://bqlgih5h7v26u"]
+
+[ext_resource type="Script" uid="uid://ckal5y4kd5adx" path="res://src/skill/skill.gd" id="1_p8fhw"]
+
+[resource]
+script = ExtResource("1_p8fhw")
+skill_name = &"game"
+description = "这是游戏"
+metadata/_custom_type_script = "uid://ckal5y4kd5adx"

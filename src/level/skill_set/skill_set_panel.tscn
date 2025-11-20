@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dself3kpo8k42"]
 
-[ext_resource type="Script" uid="uid://danktxdko122p" path="res://src/level/skill_set_panel.gd" id="1_bljiw"]
+[ext_resource type="Script" uid="uid://danktxdko122p" path="res://src/level/skill_set/skill_set_panel.gd" id="1_bljiw"]
 
 [node name="SkillSetPanel" type="HBoxContainer"]
 script = ExtResource("1_bljiw")

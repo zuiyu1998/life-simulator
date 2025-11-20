@@ -6,8 +6,8 @@ class_name Level
 @onready var skill_set_panel: SkillSetPanel = $VBoxContainer/SkillSetPanel
 
 
-var chess_grid = preload("res://src/level/chess_grid_defaullt.tres") 
-var skill_set = SkillSet.new()
+var chess_grid: ChessGrid = preload("res://src/level/chess_grid/data/chess_grid_defaullt.tres") 
+var skill_set: SkillSet = preload("res://src/level/skill_set/data/skill_set_default.tres") 
 var chess_cost_handler_container = ChessCostHandlerContainer.new()
 var chess_gain_handler_container = ChessGainHandlerContainer.new()
 var level_state = LevlState.new()
@@ -38,7 +38,7 @@ func update_skill(skill:Skill):
 func init_level():
 	skill_set.skill_update.connect(update_skill)
 	
-	for skill in skill_set.get_skill().values():
+	for skill in skill_set.skills.values():
 		skill_set_panel.update_skill(skill)
 	
 	init_chess_cost_handler_container()
@@ -71,6 +71,11 @@ func handle_merge(chess: Chess):
 		var handler = chess_cost_handler_container.get_handler(cost.cost_name)
 		if handler is ChessCostHandler:
 			handler.handle(cost)
+			
+	for gain in chess.gains:
+		var handler = chess_gain_handler_container.get_handler(gain.skill_name)
+		if handler is ChessGainHandler:
+			handler.handle(gain)
 
 
 	

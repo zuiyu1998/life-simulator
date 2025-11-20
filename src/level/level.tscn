@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://yv0gmg8jqdj7" path="res://src/level/chess_grid/chess_grid_panel.tscn" id="1_ybxv7"]
 [ext_resource type="PackedScene" uid="uid://lt16vgxgdml5" path="res://src/level/level_state_panel.tscn" id="2_mpbj7"]
 [ext_resource type="Script" uid="uid://dcv4dirpoaaud" path="res://src/level/task_manager.gd" id="3_af42n"]
-[ext_resource type="PackedScene" uid="uid://dself3kpo8k42" path="res://src/level/skill_set_panel.tscn" id="3_em31m"]
+[ext_resource type="PackedScene" uid="uid://dself3kpo8k42" path="res://src/level/skill_set/skill_set_panel.tscn" id="3_em31m"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_xv147")
