@@ -30,9 +30,12 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if not data is ChessDrag:
 		return
 	var item_drag = data as ChessDrag
-	# 设置拖动的状态
 	
 	var item_index = get_index()
+	if item_drag.item_index == item_index:
+		chess_icon.texture = item_drag.chess.image
+		return
+	
 	if chess_grid_panel.chess_grid.on_drag(item_index, item_drag.chess):
 		item_drag.success = true
 		chess_grid_panel.chess_grid.set_item(item_drag.item_index, null)
