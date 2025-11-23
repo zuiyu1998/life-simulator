@@ -13,6 +13,10 @@ script = ExtResource("1_xv147")
 offset_right = 146.0
 offset_bottom = 40.0
 
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "下一回合"
+
 [node name="LevelStatePanel" parent="VBoxContainer" instance=ExtResource("2_mpbj7")]
 layout_mode = 2
 
@@ -24,3 +28,5 @@ layout_mode = 2
 
 [node name="TaskManager" type="Node" parent="."]
 script = ExtResource("3_af42n")
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

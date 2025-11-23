@@ -2,7 +2,6 @@ extends Resource
 class_name Chess
 ## 棋子，玩家操作的主要对象
 
-
 # 棋子名称
 @export
 var chess_name: StringName = &""

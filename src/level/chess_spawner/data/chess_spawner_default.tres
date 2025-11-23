@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ChessSpawner" load_steps=5 format=3 uid="uid://8vslk0no0a7"]
+
+[ext_resource type="Script" uid="uid://r06h8naluj6m" path="res://src/level/chess_spawner/chess_spawner_item.gd" id="1_hym58"]
+[ext_resource type="Resource" uid="uid://diu4mvyc06yfl" path="res://src/level/chess_spawner/data/appple_item.tres" id="2_xk0xx"]
+[ext_resource type="Script" uid="uid://coll2sbm38ioa" path="res://src/level/chess_spawner/chess_spawner.gd" id="2_ysnnu"]
+[ext_resource type="Resource" uid="uid://derf52oy6solq" path="res://src/level/chess_spawner/data/banana_item.tres" id="3_8dvju"]
+
+[resource]
+script = ExtResource("2_ysnnu")
+items = Array[ExtResource("1_hym58")]([ExtResource("2_xk0xx"), ExtResource("3_8dvju")])
+metadata/_custom_type_script = "uid://coll2sbm38ioa"

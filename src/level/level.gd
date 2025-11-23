@@ -5,12 +5,18 @@ class_name Level
 @onready var level_state_panel: LevelStatePanel = $VBoxContainer/LevelStatePanel
 @onready var skill_set_panel: SkillSetPanel = $VBoxContainer/SkillSetPanel
 
-
+# 棋盘
 var chess_grid: ChessGrid = preload("res://src/level/chess_grid/data/chess_grid_defaullt.tres") 
+# 属性列表
 var skill_set: SkillSet = preload("res://src/level/skill_set/data/skill_set_default.tres") 
-var chess_cost_handler_container = ChessCostHandlerContainer.new()
-var chess_gain_handler_container = ChessGainHandlerContainer.new()
+# 棋子生成器
+var chess_spawner: ChessSpawner = preload("res://src/level/chess_spawner/data/chess_spawner_default.tres")
+# 关卡状态
 var level_state = LevlState.new()
+# 消费处理器集合
+var chess_cost_handler_container = ChessCostHandlerContainer.new()
+# 增益处理器集合
+var chess_gain_handler_container = ChessGainHandlerContainer.new()
 
 
 func update_health(v: int):
@@ -36,6 +42,8 @@ func update_skill(skill:Skill):
 
 
 func init_level():
+	chess_spawner.reset_start_end()
+	
 	skill_set.skill_update.connect(update_skill)
 	
 	for skill in skill_set.skills.values():
@@ -78,4 +86,8 @@ func handle_merge(chess: Chess):
 			handler.handle(gain)
 
 
-	
+func _on_button_pressed() -> void:
+	var chess = chess_spawner.get_chess()
+	var empty_index = chess_grid.get_empty_index()
+	if empty_index != -1:
+		chess_grid.set_item(empty_index, chess)

@@ -18,6 +18,13 @@ func set_item(index: int, item: Chess):
 	items[index] = item
 	emit_signal("chess_change", index)
 
+func get_empty_index() -> int:
+	for index in range(0, items.size()):
+		var item = items[index]
+		if item == null:
+			return index
+	return -1
+
 func get_item(index: int) -> Chess:
 	return items[index]
 
