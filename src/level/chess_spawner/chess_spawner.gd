@@ -27,4 +27,4 @@ func get_chess() -> Chess:
 	var index = randi_range(0, range_end - 1)
 	var item_index = chess_indexs[index]
 	var chess = items[item_index].chess
-	return chess
+	return chess.duplicate()

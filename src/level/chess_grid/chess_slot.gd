@@ -35,7 +35,6 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if item_drag.item_index == item_index:
 		chess_icon.texture = item_drag.chess.image
 		return
-	
 	if chess_grid_panel.chess_grid.on_drag(item_index, item_drag.chess):
 		item_drag.success = true
 		chess_grid_panel.chess_grid.set_item(item_drag.item_index, null)
