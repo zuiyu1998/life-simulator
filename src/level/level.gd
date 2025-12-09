@@ -91,3 +91,5 @@ func _on_button_pressed() -> void:
 	var empty_index = chess_grid.get_empty_index()
 	if empty_index != -1:
 		chess_grid.set_item(empty_index, chess)
+	else:
+		printerr("行动已满")

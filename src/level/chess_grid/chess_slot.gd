@@ -7,7 +7,7 @@ class_name ChessSlot
 # 棋盘
 var chess_grid_panel: ChessGridPanel
 # 棋子等级
-# 白 绿 蓝 橙 紫 金 红
+# 白1 绿2 绿4  蓝8 蓝16  紫32 紫64 金128 金524 红1024 红2048
 
 
 func update_chess_bg(level: int):
@@ -15,8 +15,22 @@ func update_chess_bg(level: int):
 		0:
 			texture_rect.material.set_shader_parameter("level_color", Vector4(1.0, 1.0, 1.0, 1.0))
 		1:
+			texture_rect.material.set_shader_parameter("level_color", Vector4(0.0, 1.0, 0.0, 1.0))
+		2:
 			texture_rect.material.set_shader_parameter("level_color", Vector4(0.0, 0.5, 0.0, 1.0))
-	
+		3:
+			texture_rect.material.set_shader_parameter("level_color", Vector4(0.0, 0.0, 1.0, 1.0))
+		4:
+			texture_rect.material.set_shader_parameter("level_color", Vector4(0.0, 0.0, 0.5, 1.0))
+		5:
+			texture_rect.material.set_shader_parameter("level_color", Vector4(0.965, 0.25, 0.017, 1.0))
+		6:
+			texture_rect.material.set_shader_parameter("level_color", Vector4(0.619, 0.383, 0.007, 1.0))
+		7:
+			texture_rect.material.set_shader_parameter("level_color", Vector4(1.0, 0.0, 0.0, 1.0))
+		8:
+			texture_rect.material.set_shader_parameter("level_color", Vector4(0.5, 0.0, 0.0, 1.0))
+							
 
 func update_chess_icon(texture: Texture):
 	chess_icon.texture = texture
