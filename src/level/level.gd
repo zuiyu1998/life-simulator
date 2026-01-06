@@ -4,13 +4,17 @@ class_name Level
 @onready var chess_grid_panel: ChessGridPanel = $VBoxContainer/ChessGridPanel
 @onready var level_state_panel: LevelStatePanel = $VBoxContainer/LevelStatePanel
 @onready var skill_set_panel: SkillSetPanel = $VBoxContainer/SkillSetPanel
+@onready var task_panel: TaskPanel = $VBoxContainer/TaskPanel
 
 # 棋盘
-var chess_grid: ChessGrid = preload("res://src/level/chess_grid/data/chess_grid_defaullt.tres") 
+var chess_grid: ChessGrid 
 # 属性列表
-var skill_set: SkillSet = preload("res://src/level/skill_set/data/skill_set_default.tres") 
+var skill_set: SkillSet
 # 棋子生成器
-var chess_spawner: ChessSpawner = preload("res://src/level/chess_spawner/data/chess_spawner_default.tres")
+var chess_spawner: ChessSpawner
+# 任务
+var task: Task
+
 # 关卡状态
 var level_state = LevlState.new()
 # 消费处理器集合
@@ -22,26 +26,41 @@ var chess_gain_handler_container = ChessGainHandlerContainer.new()
 func update_health(v: int):
 	level_state_panel.update_health(v)
 
+
 func update_like(v: int):
 	level_state_panel.update_like(v)
+
 
 func update_money(v: int):
 	level_state_panel.update_money(v)
 
-func _ready() -> void:
-	init_level()
 
 func init_chess_cost_handler_container():
 	chess_cost_handler_container.register("money",MoneyChessCostHandler.new_handler(level_state))
 
+
+func on_skill_update(skill_name: String, value: int):
+	match skill_name:
+		"game":
+			var event = TaskEvent.new()
+			event.task_item_name = "game"
+			event.instance = GameTaskItemEvent.new_task_item_event(1)
+			task.handle_event(event)
+
+
 func init_chess_gain_handler_container():
-	chess_gain_handler_container.register("game", GameChessGainHandler.new_handler(skill_set))
+	var game_handler = GameChessGainHandler.new_handler(skill_set)
+	game_handler.skill_update.connect(on_skill_update)
+	chess_gain_handler_container.register("game", game_handler)
+
 
 func update_skill(skill:Skill):
 	skill_set_panel.update_skill(skill)
 
 
-func init_level():
+func mount():
+	
+	task_panel.set_task(task)
 	chess_spawner.reset_start_end()
 	
 	skill_set.skill_update.connect(update_skill)

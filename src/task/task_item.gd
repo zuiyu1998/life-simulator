@@ -1,5 +1,9 @@
 extends Resource
 class_name TaskItem
 
-@export
-var task_item_name: StringName = &""
+func get_item_name() -> String:
+	return ""
+
+
+func handle_event(_event: ITaskItemEvent):
+	printerr("Task item handle event mut have impl.")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://255ox0g0m8ki"]
+
+[ext_resource type="Script" uid="uid://b2xithw75bkxp" path="res://src/level/task/game_task_item/game_task_item_panel.gd" id="1_f6cyn"]
+
+[node name="GameTaskItemPanel" type="HBoxContainer"]
+script = ExtResource("1_f6cyn")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "游戏"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+text = "10 / 0"

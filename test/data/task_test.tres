@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Task" load_steps=5 format=3 uid="uid://b3rr3by3i80j1"]
+
+[ext_resource type="Script" uid="uid://ddtbh5cc5leld" path="res://src/task/task_item.gd" id="1_0y8ai"]
+[ext_resource type="Script" uid="uid://donyy8jmh2lmb" path="res://src/task/task.gd" id="1_jegqk"]
+[ext_resource type="Script" uid="uid://dkblb0xk5vwih" path="res://src/level/task/game_task_item/game_task_item.gd" id="2_h7nkg"]
+
+[sub_resource type="Resource" id="Resource_8h284"]
+script = ExtResource("2_h7nkg")
+metadata/_custom_type_script = "uid://dkblb0xk5vwih"
+
+[resource]
+script = ExtResource("1_jegqk")
+items = Array[ExtResource("1_0y8ai")]([SubResource("Resource_8h284")])
+metadata/_custom_type_script = "uid://donyy8jmh2lmb"

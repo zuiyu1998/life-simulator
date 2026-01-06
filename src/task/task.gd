@@ -2,14 +2,14 @@ extends Resource
 class_name Task
 ## 任务
 
-@export 
+
+@export
 var items: Array[TaskItem] = []
 
-func handle_event(event: TaskEvent, handler_container: TaskHandlerContainer):
-	for item in items:
-		var handler = handler_container.get_handler(item.task_item_name)
-		if item:
-			handler.handle(item, event)
-		else:
-			printerr("%s task item not find" % item.task_item_name)
-		
+func handle_event(event: TaskEvent):
+	var index = items.find_custom(func (item): return item.get_item_name() == event.task_item_name )
+	if index != -1:
+		items[index].handle_event(event.instance)
+	else:
+		printerr("%s task item not found." % event.task_item_name)
+	
