@@ -1,9 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpvqp7e2g1723"]
+[gd_scene load_steps=7 format=3 uid="uid://dpvqp7e2g1723"]
 
 [ext_resource type="Script" uid="uid://d3b8oivk8l3ff" path="res://test/main_test.gd" id="1_7otsb"]
 [ext_resource type="PackedScene" uid="uid://p643g17vxe5x" path="res://src/level/level.tscn" id="1_plck6"]
+[ext_resource type="Resource" uid="uid://bruupshb0pqjx" path="res://test/data/chess_grid_defaullt.tres" id="3_rp86j"]
+[ext_resource type="Resource" uid="uid://b4fxj4p6p3uc0" path="res://test/data/skill_set_default.tres" id="4_6dr14"]
+[ext_resource type="Resource" uid="uid://8vslk0no0a7" path="res://test/data/chess_spawner_default.tres" id="4_cf6f0"]
+[ext_resource type="Resource" uid="uid://b3rr3by3i80j1" path="res://test/data/task_test.tres" id="4_oeh2o"]
 
 [node name="MainTest" type="Node2D"]
 script = ExtResource("1_7otsb")
 
 [node name="Level" parent="." instance=ExtResource("1_plck6")]
+chess_grid = ExtResource("3_rp86j")
+skill_set = ExtResource("4_6dr14")
+chess_spawner = ExtResource("4_cf6f0")
+task = ExtResource("4_oeh2o")

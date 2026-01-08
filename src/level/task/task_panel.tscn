@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf8risaxu4qw6"]
+[gd_scene load_steps=2 format=3 uid="uid://bimehy15ck2o2"]
 
 [ext_resource type="Script" uid="uid://ruav3uabbb" path="res://src/level/task/task_panel.gd" id="1_mdi2n"]
 

@@ -7,12 +7,16 @@ class_name Level
 @onready var task_panel: TaskPanel = $VBoxContainer/TaskPanel
 
 # 棋盘
+@export
 var chess_grid: ChessGrid 
 # 属性列表
+@export
 var skill_set: SkillSet
 # 棋子生成器
+@export
 var chess_spawner: ChessSpawner
 # 任务
+@export
 var task: Task
 
 # 关卡状态
@@ -48,6 +52,10 @@ func on_skill_update(skill_name: String, value: int):
 			task.handle_event(event)
 
 
+func on_task_finished():
+	print("on_task_finished")
+
+
 func init_chess_gain_handler_container():
 	var game_handler = GameChessGainHandler.new_handler(skill_set)
 	game_handler.skill_update.connect(on_skill_update)
@@ -58,9 +66,16 @@ func update_skill(skill:Skill):
 	skill_set_panel.update_skill(skill)
 
 
-func mount():
+func do_init() -> void:
+	task.finished.connect(on_task_finished)
 	
-	task_panel.set_task(task)
+	chess_grid_panel.do_init(chess_grid)
+	
+	task_panel.do_init(task)
+
+
+func _ready() -> void:
+	do_init()
 	chess_spawner.reset_start_end()
 	
 	skill_set.skill_update.connect(update_skill)
@@ -92,6 +107,7 @@ func mount():
 func update_chess(index: int):
 	var item = chess_grid.get_item(index)
 	chess_grid_panel.update_chess(index, item)
+
 
 func handle_merge(chess: Chess):
 	for cost in chess.costs:

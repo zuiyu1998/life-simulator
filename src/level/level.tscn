@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drnncvhax3k8r" path="res://src/level/level.gd" id="1_xv147"]
 [ext_resource type="PackedScene" uid="uid://yv0gmg8jqdj7" path="res://src/level/chess_grid/chess_grid_panel.tscn" id="1_ybxv7"]
-[ext_resource type="PackedScene" uid="uid://bf8risaxu4qw6" path="res://src/level/task/task_panel.tscn" id="2_em31m"]
+[ext_resource type="Script" uid="uid://ruav3uabbb" path="res://src/level/task/task_panel.gd" id="2_em31m"]
 [ext_resource type="PackedScene" uid="uid://lt16vgxgdml5" path="res://src/level/level_state_panel.tscn" id="2_mpbj7"]
 [ext_resource type="PackedScene" uid="uid://dself3kpo8k42" path="res://src/level/skill_set/skill_set_panel.tscn" id="3_em31m"]
 
@@ -13,12 +13,13 @@ script = ExtResource("1_xv147")
 offset_right = 146.0
 offset_bottom = 40.0
 
-[node name="TaskPanel" parent="VBoxContainer" instance=ExtResource("2_em31m")]
-layout_mode = 2
-
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "下一回合"
+
+[node name="TaskPanel" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+script = ExtResource("2_em31m")
 
 [node name="LevelStatePanel" parent="VBoxContainer" instance=ExtResource("2_mpbj7")]
 layout_mode = 2
