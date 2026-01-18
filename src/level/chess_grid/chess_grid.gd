@@ -1,3 +1,4 @@
+@tool
 extends Resource
 class_name ChessGrid
 ## 棋盘，负责棋子增删改查

@@ -69,7 +69,7 @@ func update_skill(skill:Skill):
 func do_init() -> void:
 	task.finished.connect(on_task_finished)
 	
-	chess_grid_panel.do_init(chess_grid)
+	chess_grid_panel.chess_grid = chess_grid
 	
 	task_panel.do_init(task)
 

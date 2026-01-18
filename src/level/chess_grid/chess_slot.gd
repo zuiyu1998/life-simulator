@@ -4,8 +4,6 @@ class_name ChessSlot
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var chess_icon: TextureRect = $ChessItem/ChessIcon
 
-# 棋盘
-var chess_grid_panel: ChessGridPanel
 # 棋子等级
 # 白1 绿2 绿4  蓝8 蓝16  紫32 紫64 金128 金524 红1024 红2048
 
@@ -32,6 +30,7 @@ func update_chess_bg(level: int):
 			texture_rect.material.set_shader_parameter("level_color", Vector4(0.5, 0.0, 0.0, 1.0))
 							
 
+
 func update_chess_icon(texture: Texture):
 	chess_icon.texture = texture
 
@@ -41,6 +40,11 @@ func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
 
 
 func _drop_data(_at_position: Vector2, data: Variant) -> void:
+	var chess_grid_panel = get_parent() as ChessGridPanel
+	
+	if not chess_grid_panel:
+		return
+	
 	if not data is ChessDrag:
 		return
 	var item_drag = data as ChessDrag
@@ -59,6 +63,7 @@ func on_drag_completed(chess_drag: ChessDrag):
 	if not chess_drag.success:
 		chess_icon.texture = chess_drag.chess.image
 
+
 # 设置预览
 func _create_preview(chess: Chess) -> Control:
 	var preview = Control.new()
@@ -73,6 +78,11 @@ func _create_preview(chess: Chess) -> Control:
 	return preview
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
+	var chess_grid_panel = get_parent() as ChessGridPanel
+	
+	if not chess_grid_panel:
+		return null
+	
 	var item_index = get_index()
 	var chess_item = chess_grid_panel.chess_grid.get_item(item_index)
 	if not chess_item is Chess:

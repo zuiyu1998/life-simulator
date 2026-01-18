@@ -1,7 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://yv0gmg8jqdj7"]
+[gd_scene load_steps=5 format=3 uid="uid://yv0gmg8jqdj7"]
 
 [ext_resource type="Script" uid="uid://bj5soxk8226r2" path="res://src/level/chess_grid/chess_grid_panel.gd" id="1_7egdb"]
+[ext_resource type="Script" uid="uid://bqo4lla32p4wj" path="res://src/chess/chess.gd" id="2_x6df8"]
+[ext_resource type="Script" uid="uid://vdi5hbpckkbj" path="res://src/level/chess_grid/chess_grid.gd" id="3_q0i1e"]
+
+[sub_resource type="Resource" id="Resource_yvyyg"]
+script = ExtResource("3_q0i1e")
+items = Array[ExtResource("2_x6df8")]([null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://vdi5hbpckkbj"
 
 [node name="ChessGridPanel" type="GridContainer"]
 columns = 3
 script = ExtResource("1_7egdb")
+chess_grid = SubResource("Resource_yvyyg")
