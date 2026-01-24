@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ChessGain" load_steps=2 format=3 uid="uid://s3lrkgafo0mj"]
 
-[ext_resource type="Script" uid="uid://ctj7a30jipb1p" path="res://src/gain/gain.gd" id="1_7x5j1"]
+[ext_resource type="Script" uid="uid://ctj7a30jipb1p" path="res://src/gain/gain_meta.gd" id="1_7x5j1"]
 
 [resource]
 script = ExtResource("1_7x5j1")

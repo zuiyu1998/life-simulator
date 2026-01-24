@@ -19,4 +19,4 @@ var level = 0
 var costs: Array[ChessCost] = []
 # 棋子的增益
 @export
-var gains: Array[Gain] = []
+var gains: Array[GainMeta] = []
