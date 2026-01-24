@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Chess" load_steps=7 format=3 uid="uid://dp2qvh4ype7hb"]
 
-[ext_resource type="Script" uid="uid://kim3xvrhjo47" path="res://src/chess/chess_cost.gd" id="1_n1udx"]
-[ext_resource type="Script" uid="uid://ctj7a30jipb1p" path="res://src/gain/gain_meta.gd" id="2_4vtjq"]
+[ext_resource type="Script" uid="uid://kim3xvrhjo47" path="res://src/chess/cost/cost_meta.gd" id="1_n1udx"]
+[ext_resource type="Script" uid="uid://ctj7a30jipb1p" path="res://src/chess/gain/gain_meta.gd" id="2_4vtjq"]
 [ext_resource type="Resource" uid="uid://bvir2xdxntekf" path="res://src/level/chess/data/money_cost.tres" id="2_7m3bb"]
 [ext_resource type="Texture2D" uid="uid://ctf3vjkcrfa88" path="res://src/level/chess/assets/banana.png" id="3_rmh1l"]
 [ext_resource type="Script" uid="uid://bqo4lla32p4wj" path="res://src/chess/chess.gd" id="4_2m6wh"]

@@ -1,5 +1,5 @@
 extends Resource
-class_name ChessCost
+class_name CostMeta
 ## 棋子的代价，用于在棋子合成时，消耗的数据源
 
 # 消耗对应的状态

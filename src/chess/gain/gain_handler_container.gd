@@ -3,7 +3,7 @@ class_name GainHandleContainer
 var _data: Dictionary[String, GainHandler] = {}
 
 func register(name: String, handler: GainHandler):
-	print("%s gain handler registered.")
+	print("%s gain handler registered." % name)
 	_data[name] = handler
 
 func handle(gain_meta: GainMeta) -> Gain:

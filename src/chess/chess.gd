@@ -16,7 +16,7 @@ var image: Texture
 var level = 0
 # 棋子的消耗
 @export
-var costs: Array[ChessCost] = []
+var costs: Array[CostMeta] = []
 # 棋子的增益
 @export
 var gains: Array[GainMeta] = []
