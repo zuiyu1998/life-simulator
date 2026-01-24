@@ -1,0 +1,42 @@
+<mxfile host="65bd71144e">
+    <diagram id="m6q1vCZpLBcFii6hiqh2" name="第 1 页">
+        <mxGraphModel dx="1741" dy="851" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="21" value="" style="group;rotation=90;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="-240" y="433.43" width="360" height="660" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="游戏" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" vertex="1" parent="21">
+                    <mxGeometry x="248" y="360" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;html=1;entryDx=0;entryDy=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;entryX=0.5;entryY=0;" edge="1" parent="1" source="4" target="22">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="68" y="716.2857142857142" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" value="主界面" style="rounded=0;whiteSpace=wrap;html=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="-10" y="603.1428571428571" width="156" height="56.57142857142857" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" style="edgeStyle=none;html=1;entryDx=0;entryDy=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1" source="6" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="开始" style="rounded=1;whiteSpace=wrap;html=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="-10" y="490" width="156" height="56.57142857142857" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=none;html=1;entryDx=0;entryDy=0;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1" source="12" target="15">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="人生评语" style="whiteSpace=wrap;html=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="-10" y="980.2857142857142" width="156" height="56.57142857142857" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="结束" style="rounded=1;whiteSpace=wrap;html=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;container=0;" vertex="1" parent="1">
+                    <mxGeometry x="-10" y="1093.4285714285716" width="156" height="56.57142857142857" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=none;html=1;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" edge="1" parent="1" source="22" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
