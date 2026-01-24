@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j07v4int402u"
-path="res://.godot/imported/coconut.png-ed69322fbe987e32f43d07dac6e5b05c.ctex"
+uid="uid://cnt5oms2yofs5"
+path="res://.godot/imported/blueberry.png-616fdaefd214122e5c0eacf9d1ed0281.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/chess/assets/coconut.png"
-dest_files=["res://.godot/imported/coconut.png-ed69322fbe987e32f43d07dac6e5b05c.ctex"]
+source_file="res://src/level/chess/assets/blueberry.png"
+dest_files=["res://.godot/imported/blueberry.png-616fdaefd214122e5c0eacf9d1ed0281.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="ChessSpawnerItem" load_steps=3 format=3 uid="uid://diu4mvyc06yfl"]
 
-[ext_resource type="Resource" uid="uid://dp2qvh4ype7hb" path="res://src/chess/data/banana.tres" id="1_56x82"]
+[ext_resource type="Resource" uid="uid://dp2qvh4ype7hb" path="res://src/level/chess/data/banana.tres" id="1_56x82"]
 [ext_resource type="Script" uid="uid://r06h8naluj6m" path="res://src/level/chess_spawner/chess_spawner_item.gd" id="1_b3fb1"]
 
 [resource]

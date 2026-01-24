@@ -1,6 +1,6 @@
 extends Resource
 class_name Chess
-## 棋子，玩家操作的主要对象
+## 棋子（劳动），玩家操作的主要对象
 
 # 棋子名称
 @export
@@ -19,4 +19,4 @@ var level = 0
 var costs: Array[ChessCost] = []
 # 棋子的增益
 @export
-var gains: Array[ChessGain] = []
+var gains: Array[Gain] = []

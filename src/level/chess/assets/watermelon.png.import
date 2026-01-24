@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnt5oms2yofs5"
-path="res://.godot/imported/blueberry.png-90b401a31064d749ae6c1afbc8c2a1a0.ctex"
+uid="uid://cala54tqvhqs0"
+path="res://.godot/imported/watermelon.png-2df25bb3c07077123839a4007a13708b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/chess/assets/blueberry.png"
-dest_files=["res://.godot/imported/blueberry.png-90b401a31064d749ae6c1afbc8c2a1a0.ctex"]
+source_file="res://src/level/chess/assets/watermelon.png"
+dest_files=["res://.godot/imported/watermelon.png-2df25bb3c07077123839a4007a13708b.ctex"]
 
 [params]
 

@@ -1,6 +1,6 @@
 extends Resource
 class_name Task
-## 任务
+## 任务(事件)
 
 signal finished
 

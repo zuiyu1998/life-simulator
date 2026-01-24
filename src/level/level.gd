@@ -69,8 +69,6 @@ func update_skill(skill:Skill):
 func do_init() -> void:
 	task.finished.connect(on_task_finished)
 	
-	chess_grid_panel.chess_grid = chess_grid
-	
 	task_panel.do_init(task)
 
 
@@ -94,9 +92,7 @@ func _ready() -> void:
 	update_like(level_state.like)
 	update_money(level_state.money)
 	
-	chess_grid_panel.chess_grid = chess_grid
-	chess_grid.chess_change.connect(update_chess)
-	chess_grid.merge.connect(handle_merge)
+
 	
 	for index in chess_grid.items.size():
 		var item = chess_grid.items.get(index)

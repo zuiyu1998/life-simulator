@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqdfrnw6f25ms"
-path="res://.godot/imported/orange.png-770f551791f771bab5ee8e79ae00003d.ctex"
+uid="uid://d3wk5xgjkejmv"
+path="res://.godot/imported/apple.png-322899ba7fd9ed5919853121b387e078.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/chess/assets/orange.png"
-dest_files=["res://.godot/imported/orange.png-770f551791f771bab5ee8e79ae00003d.ctex"]
+source_file="res://src/level/chess/assets/apple.png"
+dest_files=["res://.godot/imported/apple.png-322899ba7fd9ed5919853121b387e078.ctex"]
 
 [params]
 

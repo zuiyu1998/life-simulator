@@ -53,9 +53,9 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if item_drag.item_index == item_index:
 		chess_icon.texture = item_drag.chess.image
 		return
-	if chess_grid_panel.chess_grid.on_drag(item_index, item_drag.chess):
+	if chess_grid_panel.controller.on_drag(item_index, item_drag.chess):
 		item_drag.success = true
-		chess_grid_panel.chess_grid.set_item(item_drag.item_index, null)
+		chess_grid_panel.controller.set_item(item_drag.item_index, null)
 
 
 # 设置拖动失败的回调
@@ -79,12 +79,14 @@ func _create_preview(chess: Chess) -> Control:
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	var chess_grid_panel = get_parent() as ChessGridPanel
+	print("dddddd")
 	
 	if not chess_grid_panel:
 		return null
 	
 	var item_index = get_index()
-	var chess_item = chess_grid_panel.chess_grid.get_item(item_index)
+	var chess_item = chess_grid_panel.controller.get_item(item_index)
+	
 	if not chess_item is Chess:
 		return null
 	
