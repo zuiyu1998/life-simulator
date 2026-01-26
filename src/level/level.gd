@@ -6,9 +6,10 @@ class_name Level
 @onready var skill_set_panel: SkillSetPanel = $VBoxContainer/SkillSetPanel
 @onready var task_panel: TaskPanel = $VBoxContainer/TaskPanel
 
-# 棋盘
+# 棋盘数据
 @export
-var chess_grid: ChessGrid 
+var chess_grid: ChessGrid: set = _set_chess_grid
+
 # 属性列表
 @export
 var skill_set: SkillSet
@@ -22,9 +23,13 @@ var task: Task
 # 关卡状态
 var level_state = LevlState.new()
 # 消费处理器集合
-var chess_cost_handler_container = ChessCostHandlerContainer.new()
+var cost_handler_container = CostHandlerContainer.new()
 # 增益处理器集合
-var chess_gain_handler_container = ChessGainHandlerContainer.new()
+var gain_handler_container = GainHandleContainer.new()
+
+
+func _set_chess_grid(v: ChessGrid):
+	chess_grid = v
 
 
 func update_health(v: int):
@@ -40,10 +45,10 @@ func update_money(v: int):
 
 
 func init_chess_cost_handler_container():
-	chess_cost_handler_container.register("money",MoneyChessCostHandler.new_handler(level_state))
+	pass
 
 
-func on_skill_update(skill_name: String, value: int):
+func on_skill_update(skill_name: String, _value: int):
 	match skill_name:
 		"game":
 			var event = TaskEvent.new()
@@ -57,9 +62,7 @@ func on_task_finished():
 
 
 func init_chess_gain_handler_container():
-	var game_handler = GameChessGainHandler.new_handler(skill_set)
-	game_handler.skill_update.connect(on_skill_update)
-	chess_gain_handler_container.register("game", game_handler)
+	pass
 
 
 func update_skill(skill:Skill):
@@ -73,6 +76,10 @@ func do_init() -> void:
 
 
 func _ready() -> void:
+	# 绑定棋盘的控制器
+	chess_grid_panel.controller.set_data(chess_grid)
+	chess_grid_panel.controller.merge.connect(handle_merge)
+	
 	do_init()
 	chess_spawner.reset_start_end()
 	
@@ -91,13 +98,6 @@ func _ready() -> void:
 	update_health(level_state.health)
 	update_like(level_state.like)
 	update_money(level_state.money)
-	
-
-	
-	for index in chess_grid.items.size():
-		var item = chess_grid.items.get(index)
-		if item is Chess:
-			chess_grid_panel.update_chess(index, item)
 
 
 func update_chess(index: int):
@@ -105,22 +105,15 @@ func update_chess(index: int):
 	chess_grid_panel.update_chess(index, item)
 
 
-func handle_merge(chess: Chess):
-	for cost in chess.costs:
-		var handler = chess_cost_handler_container.get_handler(cost.cost_name)
-		if handler is ChessCostHandler:
-			handler.handle(cost)
-			
-	for gain in chess.gains:
-		var handler = chess_gain_handler_container.get_handler(gain.skill_name)
-		if handler is ChessGainHandler:
-			handler.handle(gain)
+func handle_merge(_chess: Chess):
+	print("[chess]", _chess)
+	pass
 
 
 func _on_button_pressed() -> void:
 	var chess = chess_spawner.get_chess()
 	var empty_index = chess_grid.get_empty_index()
 	if empty_index != -1:
-		chess_grid.set_item(empty_index, chess)
+		chess_grid_panel.controller.set_item(empty_index, chess)
 	else:
 		printerr("行动已满")

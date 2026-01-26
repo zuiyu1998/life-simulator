@@ -2,34 +2,40 @@
 extends GridContainer
 class_name ChessGridPanel
 
-var controller: ChessGridController
+const chess_slot_tscn = preload("res://src/level/chess_grid/chess_slot.tscn")
+
+var controller: ChessGridController = ChessGridController.new()
 
 @export
 var item_size: int = 9: set = _set_item_size
 
 func _set_item_size(v: int):
 	item_size = v
-	_ensure()
-	controller.set_item_size()
-
-func update_chess(index: int, chess: Chess):
-	var chess_slot = get_child(index)
-	if not chess_slot is ChessSlot:
-		return
-	
-	if chess is Chess:
-		chess_slot.update_chess_icon(chess.image)
-		chess_slot.update_chess_bg(chess.level)
+	var child_count = get_child_count()
+	var count = child_count - item_size
+	if count == 0:
+		for i in range(0, count):
+			var child = get_child(item_size + i)
+			controller.set_chess_slot(i, child)
+	elif count > 0:
+		for i in range(0, count):
+			var child = get_child(item_size + i)
+			remove_child(child)
+			controller.set_chess_slot(item_size + i, null)
+			
+		for i in range(0, item_size):
+			var child = get_child(i)
+			controller.set_chess_slot(i, child)	
 	else:
-		chess_slot.update_chess_icon(null)
-		chess_slot.update_chess_bg(0)
+		for i in range(0, child_count):
+			var child = get_child(i)
+			controller.set_chess_slot(i, child)
+			
+		for i in range(0, -count):
+			var chess_slot = chess_slot_tscn.instantiate() as ChessSlot
+			add_child(chess_slot)
+			controller.set_chess_slot(child_count + i, chess_slot)
 
-func _ensure():
-	if not controller:
-		controller = ChessGridController.new()
-		controller.view = self	
 
 func _ready() -> void:
-	_ensure()
-
-	controller.do_init()
+	_set_item_size(item_size)

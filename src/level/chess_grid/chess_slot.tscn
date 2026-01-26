@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7soxp5q5siiu"]
+[gd_scene load_steps=6 format=3 uid="uid://c7soxp5q5siiu"]
 
 [ext_resource type="Texture2D" uid="uid://cwjoms3ltxubn" path="res://src/chess/piece-bg.png" id="1_b3tjj"]
 [ext_resource type="Script" uid="uid://b61wmkoimvpyw" path="res://src/level/chess_grid/chess_slot.gd" id="1_laxon"]
 [ext_resource type="Shader" uid="uid://bvhiyrwbouesb" path="res://src/level/chess_grid/chess_slot.gdshader" id="2_hdhtu"]
+[ext_resource type="Texture2D" uid="uid://ctf3vjkcrfa88" path="res://src/level/chess/assets/banana.png" id="4_0pqly"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hdhtu"]
 resource_local_to_scene = true
@@ -25,5 +26,6 @@ layout_mode = 2
 [node name="ChessIcon" type="TextureRect" parent="ChessItem"]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
+texture = ExtResource("4_0pqly")
 expand_mode = 1
 stretch_mode = 4

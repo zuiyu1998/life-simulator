@@ -4,9 +4,24 @@ class_name ChessSlot
 @onready var texture_rect: TextureRect = $TextureRect
 @onready var chess_icon: TextureRect = $ChessItem/ChessIcon
 
+var _chess: Chess
+
 # 棋子等级
 # 白1 绿2 绿4  蓝8 蓝16  紫32 紫64 金128 金524 红1024 红2048
 
+func clear():
+	_chess = null
+	update_chess_bg(0)
+	chess_icon.texture = null
+
+func update_chess(p_chess: Chess):
+	if p_chess == null:
+		clear()
+		return
+	
+	_chess = p_chess
+	update_chess_bg(_chess.level)
+	chess_icon.texture = _chess.image
 
 func update_chess_bg(level: int):
 	match level:
@@ -28,11 +43,6 @@ func update_chess_bg(level: int):
 			texture_rect.material.set_shader_parameter("level_color", Vector4(1.0, 0.0, 0.0, 1.0))
 		8:
 			texture_rect.material.set_shader_parameter("level_color", Vector4(0.5, 0.0, 0.0, 1.0))
-							
-
-
-func update_chess_icon(texture: Texture):
-	chess_icon.texture = texture
 
 
 func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
@@ -53,9 +63,8 @@ func _drop_data(_at_position: Vector2, data: Variant) -> void:
 	if item_drag.item_index == item_index:
 		chess_icon.texture = item_drag.chess.image
 		return
-	if chess_grid_panel.controller.on_drag(item_index, item_drag.chess):
+	if chess_grid_panel.controller.on_drag(item_index, item_drag.chess, item_drag.item_index):
 		item_drag.success = true
-		chess_grid_panel.controller.set_item(item_drag.item_index, null)
 
 
 # 设置拖动失败的回调
@@ -79,7 +88,6 @@ func _create_preview(chess: Chess) -> Control:
 
 func _get_drag_data(_at_position: Vector2) -> Variant:
 	var chess_grid_panel = get_parent() as ChessGridPanel
-	print("dddddd")
 	
 	if not chess_grid_panel:
 		return null
