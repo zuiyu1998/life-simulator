@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://lt16vgxgdml5"]
 
-[ext_resource type="Script" uid="uid://bwca7gvjqnx1" path="res://src/level/level_state_panel.gd" id="1_u45sf"]
+[ext_resource type="Script" uid="uid://bwca7gvjqnx1" path="res://src/level/state/level_state_panel.gd" id="1_u45sf"]
 
 [node name="LevelStatePanel" type="HBoxContainer"]
 offset_right = 40.0

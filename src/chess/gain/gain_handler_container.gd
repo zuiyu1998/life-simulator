@@ -1,4 +1,4 @@
-class_name GainHandleContainer
+class_name GainHandlerContainer
 
 var _data: Dictionary[String, GainHandler] = {}
 

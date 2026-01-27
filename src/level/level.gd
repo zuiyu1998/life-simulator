@@ -22,11 +22,8 @@ var task: Task
 
 # 关卡状态
 var level_state = LevlState.new()
-# 消费处理器集合
-var cost_handler_container = CostHandlerContainer.new()
-# 增益处理器集合
-var gain_handler_container = GainHandleContainer.new()
 
+var chess_observer: ChessObserver = ChessObserver.new()
 
 func _set_chess_grid(v: ChessGrid):
 	chess_grid = v
@@ -44,10 +41,6 @@ func update_money(v: int):
 	level_state_panel.update_money(v)
 
 
-func init_chess_cost_handler_container():
-	pass
-
-
 func on_skill_update(skill_name: String, _value: int):
 	match skill_name:
 		"game":
@@ -61,15 +54,17 @@ func on_task_finished():
 	print("on_task_finished")
 
 
-func init_chess_gain_handler_container():
-	pass
-
-
 func update_skill(skill:Skill):
 	skill_set_panel.update_skill(skill)
 
 
+func init_chess_observer():
+	chess_observer.register_gain_handler("game", GameGainHandler.new())
+	chess_observer.register_gain_subscription("game", GameGainSubscription.new())
+
+
 func do_init() -> void:
+	init_chess_observer()
 	task.finished.connect(on_task_finished)
 	
 	task_panel.do_init(task)
@@ -78,7 +73,7 @@ func do_init() -> void:
 func _ready() -> void:
 	# 绑定棋盘的控制器
 	chess_grid_panel.controller.set_data(chess_grid)
-	chess_grid_panel.controller.merge.connect(handle_merge)
+	chess_grid_panel.controller.chess.connect(chess_observer.hanlde_chess)
 	
 	do_init()
 	chess_spawner.reset_start_end()
@@ -87,9 +82,6 @@ func _ready() -> void:
 	
 	for skill in skill_set.skills.values():
 		skill_set_panel.update_skill(skill)
-	
-	init_chess_cost_handler_container()
-	init_chess_gain_handler_container()
 	
 	level_state.health_update.connect(update_health)
 	level_state.like_update.connect(update_like)
@@ -103,11 +95,6 @@ func _ready() -> void:
 func update_chess(index: int):
 	var item = chess_grid.get_item(index)
 	chess_grid_panel.update_chess(index, item)
-
-
-func handle_merge(_chess: Chess):
-	print("[chess]", _chess)
-	pass
 
 
 func _on_button_pressed() -> void:

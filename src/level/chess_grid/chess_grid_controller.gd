@@ -1,6 +1,6 @@
 class_name ChessGridController
 
-signal merge(item: Chess)
+signal chess(item: Chess)
 
 var data: ChessGrid = ChessGrid.new()
 
@@ -23,7 +23,7 @@ func on_drag(index: int, item: Chess, drag_index: int) -> bool:
 	
 	if culItem.chess_name == item.chess_name and culItem.level == item.level:
 		var clone = culItem.duplicate()
-		emit_signal("merge", clone)
+		emit_signal("chess", clone)
 		culItem.level += 1
 		set_item(drag_index, null)
 		set_item(index, culItem)
