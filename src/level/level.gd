@@ -20,25 +20,14 @@ var chess_spawner: ChessSpawner
 @export
 var task: Task
 
+@export
 # 关卡状态
-var level_state = LevlState.new()
+var level_state = LevelState.new()
 
 var chess_observer: ChessObserver = ChessObserver.new()
 
 func _set_chess_grid(v: ChessGrid):
 	chess_grid = v
-
-
-func update_health(v: int):
-	level_state_panel.update_health(v)
-
-
-func update_like(v: int):
-	level_state_panel.update_like(v)
-
-
-func update_money(v: int):
-	level_state_panel.update_money(v)
 
 
 func on_skill_update(skill_name: String, _value: int):
@@ -60,10 +49,11 @@ func update_skill(skill:Skill):
 
 func init_chess_observer():
 	chess_observer.register_gain_handler("game", GameGainHandler.new())
-	chess_observer.register_gain_subscription("game", GameGainSubscription.new())
+	chess_observer.register_gain_subscription("game", GameGainSubscription.new_gain_subscription(level_state_panel.controller))
 
 
 func do_init() -> void:
+	
 	init_chess_observer()
 	task.finished.connect(on_task_finished)
 	
@@ -83,14 +73,6 @@ func _ready() -> void:
 	for skill in skill_set.skills.values():
 		skill_set_panel.update_skill(skill)
 	
-	level_state.health_update.connect(update_health)
-	level_state.like_update.connect(update_like)
-	level_state.money_update.connect(update_money)
-	
-	update_health(level_state.health)
-	update_like(level_state.like)
-	update_money(level_state.money)
-
 
 func update_chess(index: int):
 	var item = chess_grid.get_item(index)

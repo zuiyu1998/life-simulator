@@ -1,22 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://lt16vgxgdml5"]
+[gd_scene load_steps=3 format=3 uid="uid://lt16vgxgdml5"]
 
 [ext_resource type="Script" uid="uid://bwca7gvjqnx1" path="res://src/level/state/level_state_panel.gd" id="1_u45sf"]
+[ext_resource type="PackedScene" uid="uid://cr5kmlt7h3q16" path="res://src/level/state/money.tscn" id="2_bviis"]
 
 [node name="LevelStatePanel" type="HBoxContainer"]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_u45sf")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Money" parent="." instance=ExtResource("2_bviis")]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer"]
-layout_mode = 2
-text = "金钱"
-
-[node name="Money" type="Label" parent="HBoxContainer"]
-layout_mode = 2
-text = "0"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 2

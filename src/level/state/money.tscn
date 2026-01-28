@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cr5kmlt7h3q16"]
+
+[ext_resource type="Script" uid="uid://2u04cem5ri0e" path="res://src/level/state/money.gd" id="1_eaiob"]
+
+[node name="Money" type="HBoxContainer"]
+script = ExtResource("1_eaiob")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "金钱"
+
+[node name="Value" type="Label" parent="."]
+layout_mode = 2
+text = "0"

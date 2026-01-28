@@ -22,6 +22,7 @@ layout_mode = 2
 script = ExtResource("2_em31m")
 
 [node name="LevelStatePanel" parent="VBoxContainer" instance=ExtResource("2_mpbj7")]
+visible = true
 layout_mode = 2
 
 [node name="SkillSetPanel" parent="VBoxContainer" instance=ExtResource("3_em31m")]
