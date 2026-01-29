@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="GainMeta" load_steps=2 format=3 uid="uid://s3lrkgafo0mj"]
-
-[ext_resource type="Script" uid="uid://ctj7a30jipb1p" path="res://src/chess/gain/gain_meta.gd" id="1_7x5j1"]
-
-[resource]
-script = ExtResource("1_7x5j1")
-gain_name = &"game"
-metadata/_custom_type_script = "uid://ctj7a30jipb1p"

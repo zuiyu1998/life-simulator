@@ -1,35 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://lt16vgxgdml5"]
+[gd_scene load_steps=5 format=3 uid="uid://lt16vgxgdml5"]
 
 [ext_resource type="Script" uid="uid://bwca7gvjqnx1" path="res://src/level/state/level_state_panel.gd" id="1_u45sf"]
 [ext_resource type="PackedScene" uid="uid://cr5kmlt7h3q16" path="res://src/level/state/money.tscn" id="2_bviis"]
+[ext_resource type="PackedScene" uid="uid://po16fampswat" path="res://src/level/state/like.tscn" id="3_e8fc0"]
+[ext_resource type="PackedScene" uid="uid://sswpttsk0h1x" path="res://src/level/state/health_panel.tscn" id="4_8e5u5"]
 
 [node name="LevelStatePanel" type="HBoxContainer"]
-visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_u45sf")
 
-[node name="Money" parent="." instance=ExtResource("2_bviis")]
+[node name="MoneyPanel" parent="." instance=ExtResource("2_bviis")]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+[node name="LikePanel" parent="." instance=ExtResource("3_e8fc0")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer2"]
+[node name="HealthPanel" parent="." instance=ExtResource("4_8e5u5")]
 layout_mode = 2
-text = "心情"
-
-[node name="Like" type="Label" parent="HBoxContainer2"]
-layout_mode = 2
-text = "0"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="."]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer3"]
-layout_mode = 2
-text = "体力"
-
-[node name="Health" type="Label" parent="HBoxContainer3"]
-layout_mode = 2
-text = "0"

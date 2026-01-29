@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://sswpttsk0h1x"]
+
+[ext_resource type="Script" uid="uid://dy8agvila6hn5" path="res://src/level/state/health_panel.gd" id="1_pjjir"]
+
+[node name="HealthPanel" type="HBoxContainer"]
+script = ExtResource("1_pjjir")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "体力"
+
+[node name="Value" type="Label" parent="."]
+layout_mode = 2
+text = "0"

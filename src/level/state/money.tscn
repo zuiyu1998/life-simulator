@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2u04cem5ri0e" path="res://src/level/state/money.gd" id="1_eaiob"]
 
-[node name="Money" type="HBoxContainer"]
+[node name="MoneyPanel" type="HBoxContainer"]
 script = ExtResource("1_eaiob")
 
 [node name="Label" type="Label" parent="."]

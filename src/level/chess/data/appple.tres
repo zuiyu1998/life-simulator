@@ -1,17 +1,29 @@
-[gd_resource type="Resource" script_class="Chess" load_steps=7 format=3 uid="uid://q3mrec3b1thm"]
+[gd_resource type="Resource" script_class="Chess" load_steps=8 format=3 uid="uid://q3mrec3b1thm"]
 
 [ext_resource type="Script" uid="uid://kim3xvrhjo47" path="res://src/chess/cost/cost_meta.gd" id="1_4i1gt"]
 [ext_resource type="Script" uid="uid://ctj7a30jipb1p" path="res://src/chess/gain/gain_meta.gd" id="2_p3mjl"]
-[ext_resource type="Resource" uid="uid://bvir2xdxntekf" path="res://src/level/chess/data/money_cost.tres" id="2_rkjwx"]
 [ext_resource type="Script" uid="uid://bqo4lla32p4wj" path="res://src/chess/chess.gd" id="3_m6knl"]
-[ext_resource type="Resource" uid="uid://s3lrkgafo0mj" path="res://src/level/chess/data/game_gain.tres" id="4_5x3d8"]
 [ext_resource type="Texture2D" uid="uid://d3wk5xgjkejmv" path="res://src/level/chess/assets/apple.png" id="4_rkjwx"]
+
+[sub_resource type="Resource" id="Resource_a640l"]
+script = ExtResource("2_p3mjl")
+gain_name = &"money"
+metadata/_custom_type_script = "uid://ctj7a30jipb1p"
+
+[sub_resource type="Resource" id="Resource_m3rvq"]
+script = ExtResource("2_p3mjl")
+gain_name = &"health"
+metadata/_custom_type_script = "uid://ctj7a30jipb1p"
+
+[sub_resource type="Resource" id="Resource_ph10v"]
+script = ExtResource("2_p3mjl")
+gain_name = &"like"
+metadata/_custom_type_script = "uid://ctj7a30jipb1p"
 
 [resource]
 script = ExtResource("3_m6knl")
 chess_name = &"apple"
 description = "这是一个苹果"
 image = ExtResource("4_rkjwx")
-costs = Array[ExtResource("1_4i1gt")]([ExtResource("2_rkjwx")])
-gains = Array[ExtResource("2_p3mjl")]([ExtResource("4_5x3d8")])
+gains = Array[ExtResource("2_p3mjl")]([SubResource("Resource_a640l"), SubResource("Resource_m3rvq"), SubResource("Resource_ph10v")])
 metadata/_custom_type_script = "uid://bqo4lla32p4wj"

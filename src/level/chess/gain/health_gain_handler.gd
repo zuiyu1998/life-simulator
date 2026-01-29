@@ -1,9 +1,9 @@
 extends GainHandler
-class_name GameGainHandler
+class_name HealthGainHandler
 
 func handle(gain_meta: GainMeta) -> Gain:
-	if gain_meta.gain_name == "game":
-		var gain = GameGain.new()
+	if gain_meta.gain_name == "health":
+		var gain = HealthGain.new()
 		gain.value = gain_meta.value
 		return gain
 	else:

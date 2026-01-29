@@ -1,17 +1,19 @@
-[gd_resource type="Resource" script_class="Chess" load_steps=7 format=3 uid="uid://dp2qvh4ype7hb"]
+[gd_resource type="Resource" script_class="Chess" load_steps=6 format=3 uid="uid://dp2qvh4ype7hb"]
 
 [ext_resource type="Script" uid="uid://kim3xvrhjo47" path="res://src/chess/cost/cost_meta.gd" id="1_n1udx"]
 [ext_resource type="Script" uid="uid://ctj7a30jipb1p" path="res://src/chess/gain/gain_meta.gd" id="2_4vtjq"]
-[ext_resource type="Resource" uid="uid://bvir2xdxntekf" path="res://src/level/chess/data/money_cost.tres" id="2_7m3bb"]
 [ext_resource type="Texture2D" uid="uid://ctf3vjkcrfa88" path="res://src/level/chess/assets/banana.png" id="3_rmh1l"]
 [ext_resource type="Script" uid="uid://bqo4lla32p4wj" path="res://src/chess/chess.gd" id="4_2m6wh"]
-[ext_resource type="Resource" uid="uid://s3lrkgafo0mj" path="res://src/level/chess/data/game_gain.tres" id="4_txhnf"]
+
+[sub_resource type="Resource" id="Resource_a640l"]
+script = ExtResource("2_4vtjq")
+gain_name = &"game"
+metadata/_custom_type_script = "uid://ctj7a30jipb1p"
 
 [resource]
 script = ExtResource("4_2m6wh")
 chess_name = &"banana"
 description = "这是一个香蕉"
 image = ExtResource("3_rmh1l")
-costs = Array[ExtResource("1_n1udx")]([ExtResource("2_7m3bb")])
-gains = Array[ExtResource("2_4vtjq")]([ExtResource("4_txhnf")])
+gains = Array[ExtResource("2_4vtjq")]([SubResource("Resource_a640l")])
 metadata/_custom_type_script = "uid://bqo4lla32p4wj"

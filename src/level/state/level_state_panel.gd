@@ -1,17 +1,16 @@
 extends HBoxContainer
 class_name LevelStatePanel
 
-@onready var money: MoneyPanel = $Money
-@onready var health: Label = $HBoxContainer3/Health
-@onready var like: Label = $HBoxContainer2/Like
+@onready var money_panel: MoneyPanel = $MoneyPanel
+@onready var like_panel: LikePanel = $LikePanel
+@onready var health_panel: HealthPanel = $HealthPanel
+
 
 var controller: LevelStateController = LevelStateController.new()
 
-func update_like(count: int):
-	like.text = str(count)
-
-func update_health(count: int):
-	health.text = str(count)
-
 func _ready() -> void:
-	controller.money = money
+	controller.money_panel = money_panel
+	controller.like_panel = like_panel
+	controller.health_panel = health_panel
+	
+	controller.init_view()

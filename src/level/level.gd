@@ -48,8 +48,12 @@ func update_skill(skill:Skill):
 
 
 func init_chess_observer():
-	chess_observer.register_gain_handler("game", GameGainHandler.new())
-	chess_observer.register_gain_subscription("game", GameGainSubscription.new_gain_subscription(level_state_panel.controller))
+	chess_observer.register_gain_handler("health", HealthGainHandler.new())
+	chess_observer.register_gain_subscription("health", HealthGainSubscription.new_gain_subscription(level_state_panel.controller))
+	chess_observer.register_gain_handler("money", MoneyGainHandler.new())
+	chess_observer.register_gain_subscription("money", MoneyGainSubscription.new_gain_subscription(level_state_panel.controller))
+	chess_observer.register_gain_handler("like", LikeGainHandler.new())
+	chess_observer.register_gain_subscription("like", LikeGainSubscription.new_gain_subscription(level_state_panel.controller))
 
 
 func do_init() -> void:
