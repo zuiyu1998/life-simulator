@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqo4lla32p4wj" path="res://src/chess/chess.gd" id="1_b1fp8"]
 [ext_resource type="Script" uid="uid://kim3xvrhjo47" path="res://src/chess/cost/cost_meta.gd" id="2_jdq5a"]
-[ext_resource type="Script" uid="uid://vdi5hbpckkbj" path="res://src/level/chess_grid/chess_grid.gd" id="4_bwq5p"]
+[ext_resource type="Script" uid="uid://vdi5hbpckkbj" path="res://src/chess/chess_grid/chess_grid.gd" id="4_bwq5p"]
 [ext_resource type="Script" uid="uid://ctj7a30jipb1p" path="res://src/chess/gain/gain_meta.gd" id="4_jcgkt"]
 [ext_resource type="Texture2D" uid="uid://d3wk5xgjkejmv" path="res://src/level/chess/assets/apple.png" id="6_7bpjp"]
 [ext_resource type="Texture2D" uid="uid://ctf3vjkcrfa88" path="res://src/level/chess/assets/banana.png" id="7_u2xob"]

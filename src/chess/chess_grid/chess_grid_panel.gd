@@ -2,7 +2,6 @@
 extends GridContainer
 class_name ChessGridPanel
 
-const chess_slot_tscn = preload("res://src/level/chess_grid/chess_slot.tscn")
 
 var controller: ChessGridController = ChessGridController.new()
 
@@ -32,7 +31,7 @@ func _set_item_size(v: int):
 			controller.set_chess_slot(i, child)
 			
 		for i in range(0, -count):
-			var chess_slot = chess_slot_tscn.instantiate() as ChessSlot
+			var chess_slot = ChessGridController.get_chess_slot()
 			add_child(chess_slot)
 			controller.set_chess_slot(child_count + i, chess_slot)
 

@@ -57,6 +57,8 @@ func init_chess_observer():
 
 
 func do_init() -> void:
+	chess_grid_panel.controller.set_data(chess_grid)
+	chess_grid_panel.controller.chess.connect(chess_observer.hanlde_chess)
 	
 	init_chess_observer()
 	task.finished.connect(on_task_finished)
@@ -66,9 +68,7 @@ func do_init() -> void:
 
 func _ready() -> void:
 	# 绑定棋盘的控制器
-	chess_grid_panel.controller.set_data(chess_grid)
-	chess_grid_panel.controller.chess.connect(chess_observer.hanlde_chess)
-	
+
 	do_init()
 	chess_spawner.reset_start_end()
 	
@@ -77,11 +77,6 @@ func _ready() -> void:
 	for skill in skill_set.skills.values():
 		skill_set_panel.update_skill(skill)
 	
-
-func update_chess(index: int):
-	var item = chess_grid.get_item(index)
-	chess_grid_panel.update_chess(index, item)
-
 
 func _on_button_pressed() -> void:
 	var chess = chess_spawner.get_chess()

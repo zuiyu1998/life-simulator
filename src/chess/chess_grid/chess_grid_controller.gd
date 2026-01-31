@@ -1,10 +1,16 @@
 class_name ChessGridController
 
+const chess_slot_tscn = preload("res://src/chess/chess_grid/chess_slot.tscn")
+
 signal chess(item: Chess)
 
 var data: ChessGrid = ChessGrid.new()
 
 var chess_slots: Dictionary = {}
+
+
+static func get_chess_slot() -> ChessSlot:
+	return chess_slot_tscn.instantiate()
 
 func set_data(v: ChessGrid):
 	data = v
