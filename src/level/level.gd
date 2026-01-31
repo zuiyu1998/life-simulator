@@ -60,6 +60,8 @@ func do_init() -> void:
 	chess_grid_panel.controller.set_data(chess_grid)
 	chess_grid_panel.controller.chess.connect(chess_observer.hanlde_chess)
 	
+	skill_set_panel.controller.set_data(skill_set)
+	
 	init_chess_observer()
 	task.finished.connect(on_task_finished)
 	
@@ -71,12 +73,6 @@ func _ready() -> void:
 
 	do_init()
 	chess_spawner.reset_start_end()
-	
-	skill_set.skill_update.connect(update_skill)
-	
-	for skill in skill_set.skills.values():
-		skill_set_panel.update_skill(skill)
-	
 
 func _on_button_pressed() -> void:
 	var chess = chess_spawner.get_chess()
