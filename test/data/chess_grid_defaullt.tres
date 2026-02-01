@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ChessGrid" load_steps=14 format=3 uid="uid://bruupshb0pqjx"]
+[gd_resource type="Resource" script_class="ChessGrid" load_steps=16 format=3 uid="uid://bruupshb0pqjx"]
 
 [ext_resource type="Script" uid="uid://bqo4lla32p4wj" path="res://src/chess/chess.gd" id="1_b1fp8"]
 [ext_resource type="Script" uid="uid://kim3xvrhjo47" path="res://src/chess/cost/cost_meta.gd" id="2_jdq5a"]
@@ -8,6 +8,27 @@
 [ext_resource type="Texture2D" uid="uid://ctf3vjkcrfa88" path="res://src/level/chess/assets/banana.png" id="7_u2xob"]
 
 [sub_resource type="Resource" id="Resource_a640l"]
+script = ExtResource("4_jcgkt")
+gain_name = &"game"
+metadata/_custom_type_script = "uid://ctj7a30jipb1p"
+
+[sub_resource type="Resource" id="Resource_acka5"]
+script = ExtResource("1_b1fp8")
+chess_name = &"banana"
+description = "这是一个香蕉"
+image = ExtResource("7_u2xob")
+gains = Array[ExtResource("4_jcgkt")]([SubResource("Resource_a640l")])
+metadata/_custom_type_script = "uid://bqo4lla32p4wj"
+
+[sub_resource type="Resource" id="Resource_dw3t6"]
+script = ExtResource("1_b1fp8")
+chess_name = &"banana"
+description = "这是一个香蕉"
+image = ExtResource("7_u2xob")
+gains = Array[ExtResource("4_jcgkt")]([SubResource("Resource_a640l")])
+metadata/_custom_type_script = "uid://bqo4lla32p4wj"
+
+[sub_resource type="Resource" id="Resource_jcgkt"]
 script = ExtResource("4_jcgkt")
 gain_name = &"money"
 metadata/_custom_type_script = "uid://ctj7a30jipb1p"
@@ -22,36 +43,28 @@ script = ExtResource("4_jcgkt")
 gain_name = &"like"
 metadata/_custom_type_script = "uid://ctj7a30jipb1p"
 
-[sub_resource type="Resource" id="Resource_ct54i"]
-script = ExtResource("1_b1fp8")
-chess_name = &"apple"
-description = "这是一个苹果"
-image = ExtResource("6_7bpjp")
-gains = Array[ExtResource("4_jcgkt")]([SubResource("Resource_a640l"), SubResource("Resource_m3rvq"), SubResource("Resource_ph10v")])
-metadata/_custom_type_script = "uid://bqo4lla32p4wj"
-
-[sub_resource type="Resource" id="Resource_acka5"]
-script = ExtResource("1_b1fp8")
-chess_name = &"apple"
-description = "这是一个苹果"
-image = ExtResource("6_7bpjp")
-gains = Array[ExtResource("4_jcgkt")]([SubResource("Resource_a640l"), SubResource("Resource_m3rvq"), SubResource("Resource_ph10v")])
-metadata/_custom_type_script = "uid://bqo4lla32p4wj"
-
-[sub_resource type="Resource" id="Resource_dw3t6"]
+[sub_resource type="Resource" id="Resource_xbxww"]
 script = ExtResource("4_jcgkt")
 gain_name = &"game"
 metadata/_custom_type_script = "uid://ctj7a30jipb1p"
 
-[sub_resource type="Resource" id="Resource_jcgkt"]
+[sub_resource type="Resource" id="Resource_52djf"]
 script = ExtResource("1_b1fp8")
-chess_name = &"banana"
-description = "这是一个香蕉"
-image = ExtResource("7_u2xob")
-gains = Array[ExtResource("4_jcgkt")]([SubResource("Resource_dw3t6")])
+chess_name = &"apple"
+description = "这是一个苹果"
+image = ExtResource("6_7bpjp")
+gains = Array[ExtResource("4_jcgkt")]([SubResource("Resource_jcgkt"), SubResource("Resource_m3rvq"), SubResource("Resource_ph10v"), SubResource("Resource_xbxww")])
+metadata/_custom_type_script = "uid://bqo4lla32p4wj"
+
+[sub_resource type="Resource" id="Resource_p4ohm"]
+script = ExtResource("1_b1fp8")
+chess_name = &"apple"
+description = "这是一个苹果"
+image = ExtResource("6_7bpjp")
+gains = Array[ExtResource("4_jcgkt")]([SubResource("Resource_jcgkt"), SubResource("Resource_m3rvq"), SubResource("Resource_ph10v"), SubResource("Resource_xbxww")])
 metadata/_custom_type_script = "uid://bqo4lla32p4wj"
 
 [resource]
 script = ExtResource("4_bwq5p")
-items = Array[ExtResource("1_b1fp8")]([SubResource("Resource_ct54i"), SubResource("Resource_acka5"), SubResource("Resource_jcgkt"), null, null, null, null, null, null])
+items = Array[ExtResource("1_b1fp8")]([SubResource("Resource_acka5"), SubResource("Resource_dw3t6"), SubResource("Resource_52djf"), SubResource("Resource_p4ohm"), null, null, null, null, null])
 metadata/_custom_type_script = "uid://vdi5hbpckkbj"

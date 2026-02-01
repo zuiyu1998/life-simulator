@@ -13,7 +13,6 @@ func add_health(v: int):
 
 func add_like(v: int):
 	level_state.like += v
-	print('[ddd]', level_state.like)
 	like_panel.update_value(level_state.like)
 
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Chess" load_steps=8 format=3 uid="uid://q3mrec3b1thm"]
+[gd_resource type="Resource" script_class="Chess" load_steps=9 format=3 uid="uid://q3mrec3b1thm"]
 
 [ext_resource type="Script" uid="uid://kim3xvrhjo47" path="res://src/chess/cost/cost_meta.gd" id="1_4i1gt"]
 [ext_resource type="Script" uid="uid://ctj7a30jipb1p" path="res://src/chess/gain/gain_meta.gd" id="2_p3mjl"]
@@ -20,10 +20,15 @@ script = ExtResource("2_p3mjl")
 gain_name = &"like"
 metadata/_custom_type_script = "uid://ctj7a30jipb1p"
 
+[sub_resource type="Resource" id="Resource_xbxww"]
+script = ExtResource("2_p3mjl")
+gain_name = &"game"
+metadata/_custom_type_script = "uid://ctj7a30jipb1p"
+
 [resource]
 script = ExtResource("3_m6knl")
 chess_name = &"apple"
 description = "这是一个苹果"
 image = ExtResource("4_rkjwx")
-gains = Array[ExtResource("2_p3mjl")]([SubResource("Resource_a640l"), SubResource("Resource_m3rvq"), SubResource("Resource_ph10v")])
+gains = Array[ExtResource("2_p3mjl")]([SubResource("Resource_a640l"), SubResource("Resource_m3rvq"), SubResource("Resource_ph10v"), SubResource("Resource_xbxww")])
 metadata/_custom_type_script = "uid://bqo4lla32p4wj"
