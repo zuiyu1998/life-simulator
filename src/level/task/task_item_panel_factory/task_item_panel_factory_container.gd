@@ -2,7 +2,7 @@ class_name TaskItemPanelFactoryContainer
 
 var _data: Dictionary = {}
 
-func register(factory: TaskItemPanelFactory):
+func register(factory: ):
 	_data[factory.get_item_name()] = factory
 
 func get_task_item_panel_factory(item_name: String) -> TaskItemPanelFactory:

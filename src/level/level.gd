@@ -8,7 +8,7 @@ class_name Level
 
 # 棋盘数据
 @export
-var chess_grid: ChessGrid: set = _set_chess_grid
+var chess_grid: ChessGrid
 
 # 属性列表
 @export
@@ -25,9 +25,6 @@ var task: Task
 var level_state = LevelState.new()
 
 var chess_observer: ChessObserver = ChessObserver.new()
-
-func _set_chess_grid(v: ChessGrid):
-	chess_grid = v
 
 
 func on_skill_update(skill_name: String, _value: int):
@@ -55,7 +52,7 @@ func init_chess_observer():
 	chess_observer.register_gain_handler("like", LikeGainHandler.new())
 	chess_observer.register_gain_subscription("like", LikeGainSubscription.new_gain_subscription(level_state_panel.controller))
 	chess_observer.register_gain_handler("game", GameGainHandler.new())
-	chess_observer.register_gain_subscription("game", GameGainSubscription.new_gain_subscription(skill_set_panel.controller))
+	chess_observer.register_gain_subscription("game", GameGainSubscription.new_gain_subscription(skill_set_panel.controller, task_panel.controller))
 
 
 func do_init() -> void:
@@ -64,10 +61,9 @@ func do_init() -> void:
 	
 	skill_set_panel.controller.set_data(skill_set)
 	
-	init_chess_observer()
-	task.finished.connect(on_task_finished)
+	task_panel.controller.set_data(task)
 	
-	task_panel.do_init(task)
+	init_chess_observer()
 
 
 func _ready() -> void:

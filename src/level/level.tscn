@@ -1,13 +1,122 @@
-[gd_scene load_steps=6 format=3 uid="uid://p643g17vxe5x"]
+[gd_scene load_steps=38 format=3 uid="uid://p643g17vxe5x"]
 
 [ext_resource type="Script" uid="uid://drnncvhax3k8r" path="res://src/level/level.gd" id="1_xv147"]
 [ext_resource type="PackedScene" uid="uid://yv0gmg8jqdj7" path="res://src/chess/chess_grid/chess_grid_panel.tscn" id="1_ybxv7"]
-[ext_resource type="Script" uid="uid://ruav3uabbb" path="res://src/level/task/task_panel.gd" id="2_em31m"]
+[ext_resource type="Script" uid="uid://bqo4lla32p4wj" path="res://src/chess/chess.gd" id="2_k5trb"]
 [ext_resource type="PackedScene" uid="uid://lt16vgxgdml5" path="res://src/level/state/level_state_panel.tscn" id="2_mpbj7"]
 [ext_resource type="PackedScene" uid="uid://dself3kpo8k42" path="res://src/skill/skill_set/skill_set_panel.tscn" id="3_em31m"]
+[ext_resource type="Script" uid="uid://kim3xvrhjo47" path="res://src/chess/cost/cost_meta.gd" id="3_q0oqu"]
+[ext_resource type="Script" uid="uid://ctj7a30jipb1p" path="res://src/chess/gain/gain_meta.gd" id="4_dw4ol"]
+[ext_resource type="Texture2D" uid="uid://d3wk5xgjkejmv" path="res://src/level/chess/assets/apple.png" id="5_jtmpf"]
+[ext_resource type="Texture2D" uid="uid://ctf3vjkcrfa88" path="res://src/level/chess/assets/banana.png" id="6_5lobc"]
+[ext_resource type="Script" uid="uid://vdi5hbpckkbj" path="res://src/chess/chess_grid/chess_grid.gd" id="7_n4rap"]
+[ext_resource type="Script" uid="uid://r06h8naluj6m" path="res://src/level/chess_spawner/chess_spawner_item.gd" id="8_dw4ol"]
+[ext_resource type="Script" uid="uid://cy5negxv4o84w" path="res://src/skill/skill_set.gd" id="8_y4oqq"]
+[ext_resource type="Resource" uid="uid://derf52oy6solq" path="res://src/level/chess_spawner/data/banana_item.tres" id="9_5lobc"]
+[ext_resource type="Script" uid="uid://coll2sbm38ioa" path="res://src/level/chess_spawner/chess_spawner.gd" id="9_jtmpf"]
+[ext_resource type="Script" uid="uid://ckal5y4kd5adx" path="res://src/skill/skill.gd" id="9_ww2lt"]
+[ext_resource type="Resource" uid="uid://bqlgih5h7v26u" path="res://src/skill/data/game.tres" id="10_gj0ym"]
+[ext_resource type="Resource" uid="uid://diu4mvyc06yfl" path="res://src/level/chess_spawner/data/appple_item.tres" id="10_n4rap"]
+[ext_resource type="Script" uid="uid://ddtbh5cc5leld" path="res://src/task/task_item.gd" id="15_5yot2"]
+[ext_resource type="Script" uid="uid://dkblb0xk5vwih" path="res://src/level/task/game_task_item/game_task_item.gd" id="16_cwwql"]
+[ext_resource type="Script" uid="uid://donyy8jmh2lmb" path="res://src/task/task.gd" id="17_kd75s"]
+[ext_resource type="Script" uid="uid://u3mflqigvm64" path="res://src/level/state/level_state.gd" id="18_i13jo"]
+[ext_resource type="PackedScene" uid="uid://bimehy15ck2o2" path="res://src/level/task/task_panel.tscn" id="19_y4oqq"]
+
+[sub_resource type="Resource" id="Resource_a640l"]
+script = ExtResource("4_dw4ol")
+gain_name = &"money"
+metadata/_custom_type_script = "uid://ctj7a30jipb1p"
+
+[sub_resource type="Resource" id="Resource_m3rvq"]
+script = ExtResource("4_dw4ol")
+gain_name = &"health"
+metadata/_custom_type_script = "uid://ctj7a30jipb1p"
+
+[sub_resource type="Resource" id="Resource_ph10v"]
+script = ExtResource("4_dw4ol")
+gain_name = &"like"
+metadata/_custom_type_script = "uid://ctj7a30jipb1p"
+
+[sub_resource type="Resource" id="Resource_xbxww"]
+script = ExtResource("4_dw4ol")
+gain_name = &"game"
+metadata/_custom_type_script = "uid://ctj7a30jipb1p"
+
+[sub_resource type="Resource" id="Resource_iv48k"]
+script = ExtResource("2_k5trb")
+chess_name = &"apple"
+description = "这是一个苹果"
+image = ExtResource("5_jtmpf")
+gains = Array[ExtResource("4_dw4ol")]([SubResource("Resource_a640l"), SubResource("Resource_m3rvq"), SubResource("Resource_ph10v"), SubResource("Resource_xbxww")])
+metadata/_custom_type_script = "uid://bqo4lla32p4wj"
+
+[sub_resource type="Resource" id="Resource_n7ksj"]
+script = ExtResource("4_dw4ol")
+gain_name = &"game"
+metadata/_custom_type_script = "uid://ctj7a30jipb1p"
+
+[sub_resource type="Resource" id="Resource_fghqq"]
+script = ExtResource("2_k5trb")
+chess_name = &"banana"
+description = "这是一个香蕉"
+image = ExtResource("6_5lobc")
+gains = Array[ExtResource("4_dw4ol")]([SubResource("Resource_n7ksj")])
+metadata/_custom_type_script = "uid://bqo4lla32p4wj"
+
+[sub_resource type="Resource" id="Resource_ascnc"]
+script = ExtResource("2_k5trb")
+chess_name = &"banana"
+description = "这是一个香蕉"
+image = ExtResource("6_5lobc")
+gains = Array[ExtResource("4_dw4ol")]([SubResource("Resource_n7ksj")])
+metadata/_custom_type_script = "uid://bqo4lla32p4wj"
+
+[sub_resource type="Resource" id="Resource_5eycd"]
+script = ExtResource("2_k5trb")
+chess_name = &"apple"
+description = "这是一个苹果"
+image = ExtResource("5_jtmpf")
+gains = Array[ExtResource("4_dw4ol")]([SubResource("Resource_a640l"), SubResource("Resource_m3rvq"), SubResource("Resource_ph10v"), SubResource("Resource_xbxww")])
+metadata/_custom_type_script = "uid://bqo4lla32p4wj"
+
+[sub_resource type="Resource" id="Resource_y4oqq"]
+script = ExtResource("7_n4rap")
+items = Array[ExtResource("2_k5trb")]([SubResource("Resource_iv48k"), SubResource("Resource_fghqq"), SubResource("Resource_ascnc"), SubResource("Resource_5eycd"), null, null, null, null, null])
+metadata/_custom_type_script = "uid://vdi5hbpckkbj"
+
+[sub_resource type="Resource" id="Resource_o5bw5"]
+script = ExtResource("8_y4oqq")
+skills = Dictionary[String, ExtResource("9_ww2lt")]({
+"game": ExtResource("10_gj0ym")
+})
+metadata/_custom_type_script = "uid://cy5negxv4o84w"
+
+[sub_resource type="Resource" id="Resource_5lobc"]
+script = ExtResource("9_jtmpf")
+items = Array[ExtResource("8_dw4ol")]([ExtResource("9_5lobc"), ExtResource("10_n4rap")])
+metadata/_custom_type_script = "uid://coll2sbm38ioa"
+
+[sub_resource type="Resource" id="Resource_u1qsv"]
+script = ExtResource("16_cwwql")
+metadata/_custom_type_script = "uid://dkblb0xk5vwih"
+
+[sub_resource type="Resource" id="Resource_vgudg"]
+script = ExtResource("17_kd75s")
+items = Array[ExtResource("15_5yot2")]([SubResource("Resource_u1qsv")])
+metadata/_custom_type_script = "uid://donyy8jmh2lmb"
+
+[sub_resource type="Resource" id="Resource_bgdgy"]
+script = ExtResource("18_i13jo")
+metadata/_custom_type_script = "uid://u3mflqigvm64"
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_xv147")
+chess_grid = SubResource("Resource_y4oqq")
+skill_set = SubResource("Resource_o5bw5")
+chess_spawner = SubResource("Resource_5lobc")
+task = SubResource("Resource_vgudg")
+level_state = SubResource("Resource_bgdgy")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 offset_right = 146.0
@@ -17,9 +126,8 @@ offset_bottom = 40.0
 layout_mode = 2
 text = "下一回合"
 
-[node name="TaskPanel" type="HBoxContainer" parent="VBoxContainer"]
+[node name="TaskPanel" parent="VBoxContainer" instance=ExtResource("19_y4oqq")]
 layout_mode = 2
-script = ExtResource("2_em31m")
 
 [node name="LevelStatePanel" parent="VBoxContainer" instance=ExtResource("2_mpbj7")]
 layout_mode = 2
