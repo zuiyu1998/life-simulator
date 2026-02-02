@@ -8,6 +8,9 @@ var value: int = 0
 
 signal value_update(v: int)
 
+func is_finished() -> bool:
+	return value >= target
+
 func get_item_name() -> String:
 	return "game"
 

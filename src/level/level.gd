@@ -26,16 +26,6 @@ var level_state = LevelState.new()
 
 var chess_observer: ChessObserver = ChessObserver.new()
 
-
-func on_skill_update(skill_name: String, _value: int):
-	match skill_name:
-		"game":
-			var event = TaskEvent.new()
-			event.task_item_name = "game"
-			event.instance = GameTaskItemEvent.new_task_item_event(1)
-			task.handle_event(event)
-
-
 func on_task_finished():
 	print("on_task_finished")
 
@@ -62,6 +52,7 @@ func do_init() -> void:
 	skill_set_panel.controller.set_data(skill_set)
 	
 	task_panel.controller.set_data(task)
+	task_panel.controller.finished.connect(on_task_finished)
 	
 	init_chess_observer()
 

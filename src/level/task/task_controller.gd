@@ -1,5 +1,7 @@
 class_name TaskController
 
+signal finished
+
 var data: Task = Task.new()
 var container: TaskItemPanelFactoryContainer = TaskItemPanelFactoryContainer.new()
 var node: Node
@@ -12,6 +14,11 @@ func set_data(p_task: Task):
 
 func handle_event(event: TaskEvent):
 	data.handle_event(event)
+	
+	var v_finished = !data.items.any(func (item: TaskItem): return !item.is_finished())
+	if v_finished:
+		finished.emit()
+		
 
 func update_view():
 	for item in data.items:
