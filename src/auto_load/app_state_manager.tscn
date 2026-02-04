@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://te5jreg2erim"]
+
+[ext_resource type="Script" uid="uid://yxqlp10bnibi" path="res://src/auto_load/app_state_manager.gd" id="1_aq757"]
+[ext_resource type="Script" uid="uid://couw105c3bde4" path="res://addons/godot_state_charts/state_chart.gd" id="1_tvcgr"]
+[ext_resource type="Script" uid="uid://jk2jm1g6q853" path="res://addons/godot_state_charts/compound_state.gd" id="2_aq757"]
+[ext_resource type="Script" uid="uid://cytafq8i1y8qm" path="res://addons/godot_state_charts/atomic_state.gd" id="3_1p3h3"]
+[ext_resource type="Script" uid="uid://cr8eu1qq8v7qv" path="res://src/auto_load/loading_panel.gd" id="6_e0auq"]
+[ext_resource type="Script" uid="uid://cf1nsco3w0mf6" path="res://addons/godot_state_charts/transition.gd" id="6_ed5jv"]
+
+[node name="AppStateManager" type="Node"]
+script = ExtResource("1_aq757")
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("1_tvcgr")
+metadata/_custom_type_script = "uid://couw105c3bde4"
+
+[node name="Root" type="Node" parent="StateChart"]
+script = ExtResource("2_aq757")
+initial_state = NodePath("MainMenu")
+
+[node name="MainMenu" type="Node" parent="StateChart/Root"]
+script = ExtResource("3_1p3h3")
+
+[node name="Transition" type="Node" parent="StateChart/Root/MainMenu"]
+script = ExtResource("6_ed5jv")
+to = NodePath("../../Game")
+event = &"NewGame"
+delay_in_seconds = "0.0"
+
+[node name="Game" type="Node" parent="StateChart/Root"]
+script = ExtResource("3_1p3h3")
+
+[node name="LoadingPanel" type="CanvasLayer" parent="."]
+layer = 8
+script = ExtResource("6_e0auq")
+
+[node name="ColorRect" type="ColorRect" parent="LoadingPanel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LoadingPanel/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -20.0
+offset_right = 65.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="LoadingPanel/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(130, 20)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LoadingPanel/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[connection signal="finished" from="LoadingPanel" to="." method="_on_loading_panel_finished"]

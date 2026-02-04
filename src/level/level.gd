@@ -54,6 +54,8 @@ func do_init() -> void:
 	task_panel.controller.set_data(task)
 	task_panel.controller.finished.connect(on_task_finished)
 	
+	chess_spawner.reset_start_end()
+	
 	init_chess_observer()
 
 
@@ -61,7 +63,6 @@ func _ready() -> void:
 	# 绑定棋盘的控制器
 
 	do_init()
-	chess_spawner.reset_start_end()
 
 func _on_button_pressed() -> void:
 	var chess = chess_spawner.get_chess()

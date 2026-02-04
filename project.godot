@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="life_simulator"
-run/main_scene="uid://dpvqp7e2g1723"
+run/main_scene="uid://c0qlsw83wlpmx"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+APP_STATE_MANAGER="*res://src/auto_load/app_state_manager.tscn"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://addons/gut/plugin.cfg")

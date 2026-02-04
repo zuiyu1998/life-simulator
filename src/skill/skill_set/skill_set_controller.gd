@@ -12,7 +12,7 @@ func set_data(v: SkillSet):
 func add_game(v: int):
 	var game = data.get_skill("game")
 	if game:
-		game.count += 1
+		game.count += v
 		game_panel.update(game.count)
 	
 
