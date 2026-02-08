@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 APP_STATE_MANAGER="*res://src/auto_load/app_state_manager.tscn"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_state_charts/plugin.cfg", "res://addons/gut/plugin.cfg")

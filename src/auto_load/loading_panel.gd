@@ -15,7 +15,7 @@ func handle_error():
 
 func update_progress(value: float):
 	texture_progress_bar.value = value
-	label.text = str(value) + "%"
+	label.text = "%.1d" % value + '%'
 
 func switch_to_scene():
 	var scene = ResourceLoader.load_threaded_get(target_scene_path)
@@ -27,6 +27,7 @@ func switch_to_scene():
 func load_scene_async(scene_path: String):
 	target_scene_path = scene_path
 	ResourceLoader.load_threaded_request(scene_path)
+
 
 func _process(_delta: float) -> void:
 	load_status = ResourceLoader.load_threaded_get_status(target_scene_path, progress)
